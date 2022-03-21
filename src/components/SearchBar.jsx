@@ -12,7 +12,7 @@ const SearchBar = () => {
           onChange={e => setSearch(e.target.value)}
           className="search-input"
           type="search"
-          placeholder="Type it down bagger"
+          placeholder="Search"
         />
         <button className="search-button">Search</button>
       </div>

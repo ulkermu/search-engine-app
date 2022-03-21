@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
-const User = ({ user }) => {
+const User = ({ user, indexOfFirstUser, indexOfLastUser }) => {
   const truncateMail = (string, maxLength) => {
     if (!string) return null;
     if (string.length <= maxLength) return string;
     return `${string.substring(0, maxLength)}...`;
   };
-
+  
   const {search} = useContext(UserContext);
 
   return (
@@ -18,7 +18,7 @@ const User = ({ user }) => {
         } else if (value[0].toLowerCase().includes(search.toLowerCase()) || value[4].toLowerCase().includes(search.toLowerCase()) || value[3].toLowerCase().includes(search.toLowerCase())) {
           return value;
         }
-      }).map((user) => (
+      }).slice(indexOfFirstUser, indexOfLastUser).map((user) => (
         <div className="user" key={user[2]}>
           <div className="user-left">
             <div className="user-from">{`${truncateMail(user[4], 18)} - ${

@@ -84,6 +84,16 @@ body {
   width: 709px;
 }
 
+.user-list a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 42px;
+}
+
 .user {
   margin: 18px 35px 6px 30px;
   border-bottom: 1px solid #585858;
@@ -121,4 +131,5 @@ body {
 .app-pagination {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
