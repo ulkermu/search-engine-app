@@ -117,3 +117,8 @@ body {
   width: 245px;
   color: #484848;
 }
+
+.app-pagination {
+  display: flex;
+  justify-content: center;
+}

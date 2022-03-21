@@ -1,6 +1,7 @@
 import tesodevLogo from "../img/tesodev.png";
 import SearchBar from "./SearchBar";
 import UserList from "./UserList";
+import Pagination from "./Pagination";
 
 const App = () => {
 
@@ -17,6 +18,9 @@ const App = () => {
         </div>
         <div className="app-user-list">
           <UserList />
+        </div>
+        <div className="app-pagination">
+          <Pagination />
         </div>
       </main>
     </div>
