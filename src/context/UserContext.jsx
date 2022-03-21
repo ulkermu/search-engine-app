@@ -1,23 +1,26 @@
 import { createContext, useEffect, useReducer, useState } from "react";
+import JSONDATA from "../api/mockData.json";
 
 export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
 
-  const [user, dispatch] = useReducer(() => {
-      const user = localStorage.getItem("user");
-      return user ? JSON.parse(user) : [];
+  const [search, setSearch] = useState('');
+  const [user] = useState(JSONDATA)
+
+  const [users, dispatch] = useReducer(() => {
+      const users = localStorage.getItem("users");
+      return users ? JSON.parse(users) : [];
     }
   );
 
   useEffect(() => {
-    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("users", JSON.stringify(users));
   });
 
-  const [search, setSearch] = useState('');
 
   return (
-    <UserContext.Provider value={{ dispatch, search, setSearch }}>
+    <UserContext.Provider value={{ dispatch, search, setSearch, user }}>
       {props.children}
     </UserContext.Provider>
   );

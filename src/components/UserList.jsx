@@ -1,9 +1,9 @@
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 import User from "./User";
-import { useState } from "react";
-import users from "../api/mockData.json";
 
 const UserList = () => {
-  const [user] = useState(users);
+  const {user} = useContext(UserContext)
 
   return (
     <div className="user-list">
