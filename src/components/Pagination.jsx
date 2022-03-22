@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Pagination = ({ pages, setCurrentPage }) => {
   const numOfPages = [];
@@ -9,18 +9,22 @@ const Pagination = ({ pages, setCurrentPage }) => {
 
   const [currentButton, setCurrentButton] = useState(1);
 
+  useEffect(() => {
+    setCurrentPage(currentButton)
+  }, [currentButton, setCurrentPage])
+
   return (
     <div className="clearfix">
       <ul className="pagination">
         <li
           className={`${
-            currentButton === 1 ? "page-item disabled" : "page-item"
+            currentButton === 1 ? "page-prev disabled" : "page-prev"
           }`}
           onClick={() =>
             setCurrentButton((prev) => (prev === 1 ? prev : prev - 1))
           }
         >
-          <a href="#!" className="page-link">
+          <a href="#!" className="page-links-a">
             Previous
           </a>
         </li>
@@ -33,7 +37,7 @@ const Pagination = ({ pages, setCurrentPage }) => {
               }`}
               onClick={() => setCurrentButton(page)}
             >
-              <a href="#!" className="page-link">
+              <a href="#!" className={currentButton === page ? "page-links white" : "page-links brown"}>
                 {page}
               </a>
             </li>
@@ -41,7 +45,7 @@ const Pagination = ({ pages, setCurrentPage }) => {
         })}
         <li
           className={`${
-            currentButton === 1 ? "page-item disabled" : "page-item"
+            currentButton === 1 ? "page-prev disabled" : "page-prev"
           }`}
           onClick={() =>
             setCurrentButton((prev) =>
@@ -49,7 +53,7 @@ const Pagination = ({ pages, setCurrentPage }) => {
             )
           }
         >
-          <a href="#!" className="page-link">
+          <a href="#!" className="page-links-a">
             Next
           </a>
         </li>

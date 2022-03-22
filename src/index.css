@@ -13,6 +13,14 @@ body {
   font-weight: 700;
 }
 
+.white {
+  color: white;
+}
+
+.brown {
+  color: #484848;
+}
+
 .app-logo {
   display: grid;
   width: 315px;
@@ -82,16 +90,18 @@ body {
   border-radius: 4px;
   margin-top: 18px;
   width: 709px;
+  display: flex;
+  flex-direction: column;
 }
 
-.user-list a {
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
+/*.user-list a*/
+.show-more-button {
   color: black;
   font-size: 12px;
   font-weight: 700;
   margin-top: 42px;
+  background: none;
+  border: none;
 }
 
 .user {
@@ -132,4 +142,63 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 10px;
+}
+
+.page-item {
+  background: #FFFFFF;
+  border: 1px solid #484848;
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 5px;
+}
+
+.page-prev {
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  width: 86px;
+  height: 24px;
+  background: #FFFFFF;
+  border: 1px solid #484848;
+  border-radius: 4px;
+  color: #484848;
+  margin: 5px;
+}
+
+.page-links {
+  text-decoration: none;
+}
+
+.page-links-a {
+  text-decoration: none;
+  color: #484848;
+}
+
+.active {
+  background: #204080;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+}
+
+.xpage-links {
+  padding: 5px 10px;
+  margin: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #484848;
+  border: 1px solid rgba(72, 72, 72, 1);
+  border-radius: 4px;
+}
+
+.xpage-item {
+  background: #204080;
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
