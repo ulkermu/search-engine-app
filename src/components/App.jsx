@@ -1,9 +1,9 @@
 import tesodevLogo from "../img/tesodev.png";
 import SearchBar from "./SearchBar";
 import UserList from "./UserList";
+import MoreList from "./MoreList";
 
 const App = () => {
-
   return (
     <div className="app">
       <header className="app-logo">
@@ -15,7 +15,9 @@ const App = () => {
           <SearchBar />
         </div>
         <div className="app-user-list">
-          <UserList />
+          <div className="user-list">
+            <UserList />
+          </div>
         </div>
       </main>
     </div>
