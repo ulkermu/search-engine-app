@@ -110,7 +110,7 @@ const MoreList = () => {
             />
           </div>
           <div className="app-pagination">
-            <Pagination pages={totalPagesNum} setCurrentPage={setCurrentPage} />
+            <Pagination pages={totalPagesNum} setCurrentPage={setCurrentPage} currentPage={currentPage} />
           </div>
         </div>
       </main>
