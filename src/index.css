@@ -115,6 +115,10 @@ body {
   text-decoration: none;
 }
 
+.show-more-button:hover {
+  color: black;
+}
+
 .app-user {
   margin: 10px 20px 2px 17px;
   padding: 9px;
@@ -126,7 +130,6 @@ body {
 .user {
   display: flex;
   justify-content: flex-start;
-
 }
 
 .app-user:hover {
