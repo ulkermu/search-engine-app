@@ -111,6 +111,8 @@ body {
   margin-top: 42px;
   background: none;
   border: none;
+  text-align: center;
+  text-decoration: none;
 }
 
 .app-user {
