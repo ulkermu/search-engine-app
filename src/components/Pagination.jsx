@@ -96,19 +96,3 @@ const Pagination = ({ pages, setCurrentPage, currentPage }) => {
 };
 
 export default Pagination;
-
-/*
-return (
-            <li
-              key={i}
-              className={`${
-                currentButton === page ? "page-item active" : "page-item"
-              }`}
-              onClick={() => setCurrentButton(page)}
-            >
-              <a href="#!" className={currentButton === page ? "page-links white" : "page-links brown"}>
-                {page}
-              </a>
-            </li>
-          );
-*/
