@@ -32,7 +32,7 @@ const Pagination = ({ pages, setCurrentPage, currentPage }) => {
 
   let pageIncrementButton = null;
 
-  if(pages.length > maxPageNumberLimit) {
+  if(numOfPages.length > maxPageNumberLimit) {
     pageIncrementButton = <li onClick={handleNextButton}> &hellip; </li>
   }
 

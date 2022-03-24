@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 
 
@@ -14,7 +15,7 @@ const SearchBar = () => {
           type="search"
           placeholder="Search"
         />
-        <button className="search-button">Search</button>
+        <Link to="/showmore"><button className="search-button">Search</button></Link>
       </div>
     );
 }
