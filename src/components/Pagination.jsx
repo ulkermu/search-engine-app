@@ -72,7 +72,7 @@ const Pagination = ({ pages, setCurrentPage, currentPage }) => {
                   }
                 >
                   {page}
-                  {pageIncrementButton}
+
                 </a>
               </li>
             );
@@ -82,7 +82,7 @@ const Pagination = ({ pages, setCurrentPage, currentPage }) => {
         })}
         <li
           className={`${
-            currentButton === 1 ? "page-prev disabled" : "page-prev"
+            currentButton === numOfPages[numOfPages.length - 1] ? "page-prev disabled" : "page-prev"
           }`}
           onClick={handleNextButton}
         >

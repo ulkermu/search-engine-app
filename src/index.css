@@ -204,6 +204,11 @@ body {
   border-radius: 4px;
 }
 
+.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 /** MoreList */
 
 .app-s-logo {
