@@ -6,7 +6,7 @@ export const UserContext = createContext();
 const UserContextProvider = (props) => {
 
   const [search, setSearch] = useState('');
-  const [user] = useState(JSONDATA)
+  const [user, setUser] = useState(JSONDATA.data)
 
   const [users, dispatch] = useReducer(() => {
       const users = localStorage.getItem("users");
@@ -20,7 +20,7 @@ const UserContextProvider = (props) => {
 
 
   return (
-    <UserContext.Provider value={{ dispatch, search, setSearch, user }}>
+    <UserContext.Provider value={{ dispatch, search, setSearch, user, setUser }}>
       {props.children}
     </UserContext.Provider>
   );

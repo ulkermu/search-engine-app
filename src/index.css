@@ -84,7 +84,7 @@ body {
   background-color: #4F75C2;
 }
 
-.user-list {
+.user-lists {
   background-color: #FFFFFF;
   border: 1px solid #484848;
   border-radius: 4px;
@@ -112,19 +112,26 @@ body {
   border: none;
 }
 
-.user {
-  margin: 18px 35px 6px 30px;
-  border-bottom: 1px solid #585858;
+.app-user {
+  margin: 10px 20px 2px 17px;
+  padding: 9px;
   transform: matrix(1, 0, 0, 1, 0, 0);
-  display: flex;
+  border: none;
+  border-radius: 4px;
 }
 
-.user:hover {
+.user {
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+.app-user:hover {
   background-color: #C4C4C4;
   cursor: pointer;
 }
 
-.user:hover .user-pers {
+.app-user:hover .user-pers {
   color: white;
 }
 
@@ -144,6 +151,11 @@ body {
 .user-mail {
   width: 245px;
   color: #484848;
+}
+
+.line {
+  width: 100%;
+  border-bottom: 1px solid #585858;
 }
 
 .app-pagination {
@@ -190,4 +202,45 @@ body {
   background: #204080;
   border: 1px solid #FFFFFF;
   border-radius: 4px;
+}
+
+/** MoreList */
+
+.app-s-logo {
+  display: flex;
+  margin: 27px 0 0 37px;
+  align-items: center;
+}
+
+.search-more-input {
+  width: 509px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 1);
+  text-align: center;
+  margin-left: 35px;
+}
+
+.search-more-input:placeholder-shown {
+  text-align: center;
+}
+
+.order {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.order p {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  height: 24px;
+}
+
+.order img {
+  width: 26px;
+  height: 24px;
+  margin: 0;
 }
