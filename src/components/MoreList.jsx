@@ -3,10 +3,11 @@ import { UserContext } from "../context/UserContext";
 import User from "./User";
 import Pagination from "./Pagination";
 import tesodevSmallLogo from "../img/tesodev-small.png";
-import orderIcon from "../img/iconfinder.png";
+import orderIcon from "../img/iconfinder.png"
 import MoreSearchBar from "./MoreSearchBar";
 import { Link } from "react-router-dom";
-import { Dropdown } from "react-bootstrap";
+import { Popover } from "react-bootstrap";
+import OrderBy from "./OrderBy";
 
 const MoreList = () => {
   const { user, setUser } = useContext(UserContext);
@@ -78,7 +79,6 @@ const MoreList = () => {
       setDateOrder("ASC");
     }
   };
-  
 
   //* Pagination Number Select
   const handleSelect = (data) => {
@@ -99,7 +99,26 @@ const MoreList = () => {
         <div className="app-more-list">
           <div className="more-list">
             <div className="order">
-              <Dropdown>
+              <OrderBy />
+            </div>
+            <User
+              indexOfFirstUser={indexOfFirstUser}
+              indexOfLastUser={indexOfLastUser}
+            />
+          </div>
+          <div className="app-pagination">
+            <Pagination handleSelect={handleSelect} pageCount={pageCount} />
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default MoreList;
+
+/*
+<Dropdown>
                 <Dropdown.Toggle variant="" id="dropdown-basic">
                   <img src={orderIcon} alt="Finder" />
                   Order By
@@ -132,19 +151,4 @@ const MoreList = () => {
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-            </div>
-            <User
-              indexOfFirstUser={indexOfFirstUser}
-              indexOfLastUser={indexOfLastUser}
-            />
-          </div>
-          <div className="app-pagination">
-            <Pagination handleSelect={handleSelect} pageCount={pageCount} />
-          </div>
-        </div>
-      </main>
-    </div>
-  );
-};
-
-export default MoreList;
+*/

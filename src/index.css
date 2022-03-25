@@ -217,16 +217,6 @@ body {
   color: #484848;
 }
 
-.active {
-  background: #204080;
-  color: #fff;
-  border: 0 solid #484848;
-  text-align: center;
-  font-weight: 700;
-  border-radius: 4px;
-
-}
-
 .disabled {
   cursor: not-allowed;
   pointer-events: none;
@@ -279,4 +269,26 @@ input:focus {
   width: 26px;
   height: 24px;
   margin: 0;
+}
+
+.order-poop {
+  width: 166px;
+  height: 153px;
+}
+
+.order-by {
+  font-size: 14px;
+  font-weight: 700;
+  height: 29px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.order-by:hover {
+  background-color: #C4C4C4;
+  color: #FFFFFF;
 }
