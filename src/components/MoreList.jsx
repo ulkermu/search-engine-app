@@ -3,20 +3,16 @@ import { UserContext } from "../context/UserContext";
 import User from "./User";
 import Pagination from "./Pagination";
 import tesodevSmallLogo from "../img/tesodev-small.png";
-import orderIcon from "../img/iconfinder.png"
 import MoreSearchBar from "./MoreSearchBar";
 import { Link } from "react-router-dom";
-import { Popover } from "react-bootstrap";
 import OrderBy from "./OrderBy";
 
 const MoreList = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const { search } = useContext(UserContext);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [userPerPage] = useState(6);
-  const [order, setOrder] = useState("ascending");
-  const [dateOrder, setDateOrder] = useState("ASC");
 
   //* Finding Last User;
   const indexOfLastUser = currentPage * userPerPage;
@@ -37,48 +33,6 @@ const MoreList = () => {
       return false;
     }).length / userPerPage
   );
-
-  //* String Sortings functions;
-  const sortingAsc = () => {
-    if (order === "ascending") {
-      const sorted = [...user].sort((a, b) => (a > b ? 1 : -1));
-      setUser(sorted);
-      setOrder("descending");
-    }
-  };
-
-  const sortingDsc = () => {
-    if (order === "descending") {
-      const sorted = [...user].sort((a, b) => (a > b ? -1 : 1));
-      setUser(sorted);
-      setOrder("ascending");
-    }
-  };
-
-  //* Date Sorting Functions.
-  const sortingDateAsc = () => {
-    if (dateOrder === "ASC") {
-      const sortedDate = [...user].sort(
-        (a, b) =>
-          new Date(...a[3].split("/").reverse()) -
-          new Date(...b[3].split("/").reverse())
-      );
-      setUser(sortedDate);
-      setDateOrder("DSC");
-    }
-  };
-
-  const sortingDateDsc = () => {
-    if (dateOrder === "DSC") {
-      const sortedDate = [...user].sort(
-        (a, b) =>
-          new Date(...b[3].split("/").reverse()) -
-          new Date(...a[3].split("/").reverse())
-      );
-      setUser(sortedDate);
-      setDateOrder("ASC");
-    }
-  };
 
   //* Pagination Number Select
   const handleSelect = (data) => {
@@ -116,39 +70,3 @@ const MoreList = () => {
 };
 
 export default MoreList;
-
-/*
-<Dropdown>
-                <Dropdown.Toggle variant="" id="dropdown-basic">
-                  <img src={orderIcon} alt="Finder" />
-                  Order By
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item
-                    href="#/action-1"
-                    onClick={() => sortingAsc(user[0])}
-                  >
-                    Name ascending
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    href="#/action-2"
-                    onClick={() => sortingDsc(user[0])}
-                  >
-                    Name descending
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    href="#/action-3"
-                    onClick={() => sortingDateAsc(user[3])}
-                  >
-                    Year ascending
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    href="#/action-4"
-                    onClick={() => sortingDateDsc(user[3])}
-                  >
-                    Year descending
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-*/
