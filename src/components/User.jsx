@@ -1,15 +1,16 @@
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
-const User = ({ user, indexOfFirstUser, indexOfLastUser }) => {
+const User = ({ indexOfFirstUser, indexOfLastUser }) => {
+
+  const { search } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   const truncateMail = (string, maxLength) => {
     if (!string) return null;
     if (string.length <= maxLength) return string;
     return `${string.substring(0, maxLength)}...`;
   };
-
-  const { search } = useContext(UserContext);
 
   return (
     <>
@@ -24,6 +25,7 @@ const User = ({ user, indexOfFirstUser, indexOfLastUser }) => {
           ) { 
             return value
           }
+          return false;
         })
         .slice(indexOfFirstUser, indexOfLastUser)
         .map((user) => (

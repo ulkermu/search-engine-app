@@ -1,13 +1,11 @@
 import ReactPaginate from "react-paginate";
 
-const Pagination = ({ pages, setCurrentPage }) => {
+const Pagination = ({ pages, handleSelect, pageCount }) => {
+  
   const numOfPages = [];
 
   for (let i = 1; i <= pages; i++) {
     numOfPages.push(i);
-  }
-  const handleSelect = (data) => {
-    setCurrentPage(data.selected + 1)
   }
 
   return (
@@ -16,7 +14,7 @@ const Pagination = ({ pages, setCurrentPage }) => {
         previousLabel={"Previous"}
         nextLabel={"Next"}
         breakLabel={'...'}
-        pageCount={pages}
+        pageCount={pageCount}
         marginPagesDisplayed={3}
         pageRangeDisplayed={3}
         onPageChange={handleSelect}

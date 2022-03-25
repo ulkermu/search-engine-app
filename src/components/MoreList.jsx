@@ -10,6 +10,7 @@ import { Dropdown } from "react-bootstrap";
 
 const MoreList = () => {
   const { user, setUser } = useContext(UserContext);
+  const { search } = useContext(UserContext);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [userPerPage] = useState(6);
@@ -55,6 +56,25 @@ const MoreList = () => {
     }
   };
 
+  const handleSelect = (data) => {
+    setCurrentPage(data.selected + 1)
+  }
+
+  const pageCount = Math.ceil(
+    user.filter((bulletin) => {
+      if (search === "") {
+        return bulletin;
+      } else if (
+        bulletin[0].toLowerCase().includes(search.toLowerCase()) ||
+        bulletin[4].toLowerCase().includes(search.toLowerCase()) ||
+        bulletin[3].toLowerCase().includes(search.toLowerCase()) 
+      ) {
+        return bulletin;
+      }
+      return false;
+    }).length / userPerPage
+  );
+
   return (
     <div className="app">
       <header className="app-s-logo">
@@ -62,7 +82,7 @@ const MoreList = () => {
           <img className="app-img" src={tesodevSmallLogo} alt="Company Logo" />
         </Link>
         <div className="app-more-search">
-          <MoreSearchBar />
+          <MoreSearchBar handleSelect={handleSelect}/>
         </div>
       </header>
       <main className="app-main">
@@ -104,14 +124,13 @@ const MoreList = () => {
               </Dropdown>
             </div>
             <User
-              user={user}
               indexOfFirstUser={indexOfFirstUser}
               indexOfLastUser={indexOfLastUser}
             />
           </div>
           <div className="app-pagination">
             <Pagination
-            pages={totalPagesNum} setCurrentPage={setCurrentPage} />
+            pages={totalPagesNum} handleSelect={handleSelect} pageCount={pageCount} />
           </div>
         </div>
       </main>
