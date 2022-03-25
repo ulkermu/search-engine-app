@@ -13,8 +13,8 @@ body {
   font-weight: 700;
 }
 
-.white {
-  color: white;
+.app {
+  width: 1280px;
 }
 
 .brown {
@@ -180,6 +180,7 @@ body {
   font-size: 14px;
   font-weight: 700;
   margin: 5px;
+  user-select: none;
 }
 
 .page-prev {
@@ -193,21 +194,17 @@ body {
   border-radius: 4px;
   color: #484848;
   margin: 5px;
+  user-select: none;
 }
 
 .page-links {
-  text-decoration: none;
-}
-
-.page-links-a {
   text-decoration: none;
   color: #484848;
 }
 
 .active {
   background: #204080;
-  border: 1px solid #FFFFFF;
-  border-radius: 4px;
+  color: #fff;
 }
 
 .disabled {
