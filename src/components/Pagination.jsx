@@ -1,12 +1,6 @@
 import ReactPaginate from "react-paginate";
 
-const Pagination = ({ pages, handleSelect, pageCount }) => {
-  
-  const numOfPages = [];
-
-  for (let i = 1; i <= pages; i++) {
-    numOfPages.push(i);
-  }
+const Pagination = ({ handleSelect, pageCount }) => {
 
   return (
     <div>
@@ -20,7 +14,7 @@ const Pagination = ({ pages, handleSelect, pageCount }) => {
         onPageChange={handleSelect}
         containerClassName={"pagination"}
         pageClassName={"page-item"}
-        pageLinkClassName={"page-links"}
+        pageLinkClassName={"page-link"}
         previousClassName={"page-prev"}
         previousLinkClassName={"page-links"}
         nextClassName={"page-prev"}

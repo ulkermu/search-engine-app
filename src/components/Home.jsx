@@ -6,14 +6,14 @@ import { UserContext } from "../context/UserContext";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-    const { user } = useContext(UserContext);
-    const [currentPage] = useState(1);
-    const [userPerPage] = useState(3);
-  
-    // En son kullanıcıyı bulmak için;
-    const indexOfLastUser = currentPage * userPerPage;
-    // İlk kullanıcıyı bulmak için;
-    const indexOfFirstUser = indexOfLastUser - userPerPage;
+  const { user } = useContext(UserContext);
+  const [currentPage] = useState(1);
+  const [userPerPage] = useState(3);
+
+  //* Finding Last User;
+  const indexOfLastUser = currentPage * userPerPage;
+  //* Finding First User;
+  const indexOfFirstUser = indexOfLastUser - userPerPage;
 
   return (
     <div className="app">
@@ -32,7 +32,9 @@ const Home = () => {
               indexOfFirstUser={indexOfFirstUser}
               indexOfLastUser={indexOfLastUser}
             />
-            <Link to="/showmore" className="show-more-button">Show more...</Link>
+            <Link to="/showmore" className="show-more-button">
+              Show more...
+            </Link>
           </div>
         </div>
       </main>

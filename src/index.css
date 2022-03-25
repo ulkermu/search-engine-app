@@ -22,6 +22,10 @@ body {
   color: #484848;
 }
 
+.white {
+  color: #FFFFFF;
+}
+
 .app-logo {
   display: grid;
   width: 315px;
@@ -64,7 +68,6 @@ body {
 
 .search-input:hover {
   background-color: rgba(100, 100, 100, 0.08);
-  border: 2px solid rgba(0, 0, 0, 0.6);
 }
 
 .search-button {
@@ -173,7 +176,6 @@ body {
 
 .page-item {
   background: #FFFFFF;
-  border: 1px solid #484848;
   border-radius: 4px;
   width: 24px;
   height: 24px;
@@ -198,6 +200,18 @@ body {
   user-select: none;
 }
 
+.page-link {
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #484848;
+  border-radius: 4px;
+  margin: 5;
+  padding: 0;
+  color: #484848;
+}
+
 .page-links {
   text-decoration: none;
   color: #484848;
@@ -206,6 +220,11 @@ body {
 .active {
   background: #204080;
   color: #fff;
+  border: 0 solid #484848;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 4px;
+
 }
 
 .disabled {
@@ -232,6 +251,14 @@ body {
 
 .search-more-input:placeholder-shown {
   text-align: center;
+}
+
+.search-more-input:hover {
+  background: rgba(100, 100, 100, 0.08);
+}
+
+input:focus {
+  outline: none;
 }
 
 .order {

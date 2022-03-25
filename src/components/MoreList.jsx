@@ -17,13 +17,27 @@ const MoreList = () => {
   const [order, setOrder] = useState("ascending");
   const [dateOrder, setDateOrder] = useState("ASC");
 
-  // En son kullanıcıyı bulmak için;
+  //* Finding Last User;
   const indexOfLastUser = currentPage * userPerPage;
-  // İlk kullanıcıyı bulmak için;
+  //* Finding First User;
   const indexOfFirstUser = indexOfLastUser - userPerPage;
-  // Toplam sayfa sayısı;
-  const totalPagesNum = Math.ceil(user.length / userPerPage);
 
+  const pageCount = Math.ceil(
+    user.filter((user) => {
+      if (search === "") {
+        return user;
+      } else if (
+        user[0].toLowerCase().includes(search.toLowerCase()) ||
+        user[4].toLowerCase().includes(search.toLowerCase()) ||
+        user[3].toLowerCase().includes(search.toLowerCase())
+      ) {
+        return user;
+      }
+      return false;
+    }).length / userPerPage
+  );
+
+  //* String Sortings functions;
   const sortingAsc = () => {
     if (order === "ascending") {
       const sorted = [...user].sort((a, b) => (a > b ? 1 : -1));
@@ -40,40 +54,36 @@ const MoreList = () => {
     }
   };
 
+  //* Date Sorting Functions.
   const sortingDateAsc = () => {
     if (dateOrder === "ASC") {
-      const sortedDate = [...user].sort((a, b) => new Date(...a[3].split('/').reverse()) - new Date(...b[3].split('/').reverse()));
+      const sortedDate = [...user].sort(
+        (a, b) =>
+          new Date(...a[3].split("/").reverse()) -
+          new Date(...b[3].split("/").reverse())
+      );
       setUser(sortedDate);
-      setDateOrder("DSC")
+      setDateOrder("DSC");
     }
   };
 
   const sortingDateDsc = () => {
     if (dateOrder === "DSC") {
-      const sortedDate = [...user].sort((a, b) => new Date(...b[3].split('/').reverse()) - new Date(...a[3].split('/').reverse()));
+      const sortedDate = [...user].sort(
+        (a, b) =>
+          new Date(...b[3].split("/").reverse()) -
+          new Date(...a[3].split("/").reverse())
+      );
       setUser(sortedDate);
-      setDateOrder("ASC")
+      setDateOrder("ASC");
     }
   };
+  
 
+  //* Pagination Number Select
   const handleSelect = (data) => {
-    setCurrentPage(data.selected + 1)
-  }
-
-  const pageCount = Math.ceil(
-    user.filter((bulletin) => {
-      if (search === "") {
-        return bulletin;
-      } else if (
-        bulletin[0].toLowerCase().includes(search.toLowerCase()) ||
-        bulletin[4].toLowerCase().includes(search.toLowerCase()) ||
-        bulletin[3].toLowerCase().includes(search.toLowerCase()) 
-      ) {
-        return bulletin;
-      }
-      return false;
-    }).length / userPerPage
-  );
+    setCurrentPage(data.selected + 1);
+  };
 
   return (
     <div className="app">
@@ -82,7 +92,7 @@ const MoreList = () => {
           <img className="app-img" src={tesodevSmallLogo} alt="Company Logo" />
         </Link>
         <div className="app-more-search">
-          <MoreSearchBar handleSelect={handleSelect}/>
+          <MoreSearchBar handleSelect={handleSelect} />
         </div>
       </header>
       <main className="app-main">
@@ -129,8 +139,7 @@ const MoreList = () => {
             />
           </div>
           <div className="app-pagination">
-            <Pagination
-            pages={totalPagesNum} handleSelect={handleSelect} pageCount={pageCount} />
+            <Pagination handleSelect={handleSelect} pageCount={pageCount} />
           </div>
         </div>
       </main>
