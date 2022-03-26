@@ -11,7 +11,7 @@ const OrderBy = () => {
 
   //* String Sortings functions;
   const sortingAsc = () => {
-    if (order === "ascending") {
+    if (order === "ascending" || order === "descending") {
       const sorted = [...user].sort((a, b) => (a > b ? 1 : -1));
       setUser(sorted);
       setOrder("descending");
@@ -19,7 +19,7 @@ const OrderBy = () => {
   };
 
   const sortingDsc = () => {
-    if (order === "descending") {
+    if (order === "descending" || order === "ascending") {
       const sorted = [...user].sort((a, b) => (a > b ? -1 : 1));
       setUser(sorted);
       setOrder("ascending");
@@ -28,7 +28,7 @@ const OrderBy = () => {
 
   //* Date Sorting Functions.
   const sortingDateAsc = () => {
-    if (dateOrder === "ASC") {
+    if (dateOrder === "ASC" || dateOrder === "DSC") {
       const sortedDate = [...user].sort(
         (a, b) =>
           new Date(...a[3].split("/").reverse()) -
@@ -40,7 +40,7 @@ const OrderBy = () => {
   };
 
   const sortingDateDsc = () => {
-    if (dateOrder === "DSC") {
+    if (dateOrder === "DSC" || dateOrder === "ASC") {
       const sortedDate = [...user].sort(
         (a, b) =>
           new Date(...b[3].split("/").reverse()) -

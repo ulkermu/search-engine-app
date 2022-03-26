@@ -9,18 +9,17 @@ const UserContextProvider = (props) => {
   const [user, setUser] = useState(JSONDATA.data)
 
   const [users, dispatch] = useReducer(() => {
-      const users = localStorage.getItem("users");
+      const users = localStorage.getItem("data");
       return users ? JSON.parse(users) : [];
     }
   );
 
   useEffect(() => {
-    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("data", JSON.stringify(users));
   });
 
-
   return (
-    <UserContext.Provider value={{ dispatch, search, setSearch, user, setUser }}>
+    <UserContext.Provider value={{ dispatch, search, setSearch, user, setUser, users }}>
       {props.children}
     </UserContext.Provider>
   );

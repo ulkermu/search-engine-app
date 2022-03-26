@@ -89,6 +89,12 @@ body {
   color: #FFFFFF;
 }
 
+.search-button:disabled {
+  background-color: rgba(20, 20, 20, .4);
+  user-select: none;
+  cursor: auto;
+}
+
 .user-lists {
   background-color: #FFFFFF;
   border: 1px solid #484848;
@@ -197,7 +203,6 @@ body {
   border-radius: 4px;
   color: #484848;
   margin: 5px;
-  user-select: none;
 }
 
 .page-link {
@@ -215,6 +220,7 @@ body {
 .page-links {
   text-decoration: none;
   color: #484848;
+  user-select: none;
 }
 
 .disabled {
@@ -245,6 +251,10 @@ body {
 
 .search-more-input:hover {
   background: rgba(100, 100, 100, 0.08);
+}
+
+.search-more-input:required {
+  border: 2px solid red;
 }
 
 input:focus {

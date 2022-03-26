@@ -32,14 +32,14 @@ const User = ({ indexOfFirstUser, indexOfLastUser }) => {
           <div className="app-user" key={user[2]}>
             <div className="user">
               <div className="user-left">
-                <div className="user-from">{`${truncateMail(user[4], 18)} - ${
+                <div className="user-from">{`${truncateMail(user[4], 24)} - ${
                   user[5]
                 }`}</div>
                 <div className="user-pers">{`${user[0]} - ${user[3]}`}</div>
               </div>
               <div className="user-mail">{`Email: ${truncateMail(
                 user[2],
-                10
+                30
               )}`}</div>
             </div>
             <div className="line"></div>
