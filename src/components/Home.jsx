@@ -1,7 +1,7 @@
 import SearchBar from "./SearchBar";
 import User from "./User";
 import tesodevLogo from "../img/tesodev.png";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../context/UserContext";
 import { Link } from "react-router-dom";
 
@@ -9,7 +9,17 @@ const Home = () => {
   const { user } = useContext(UserContext);
   const { search } = useContext(UserContext);
   const [currentPage] = useState(1);
-  const [userPerPage] = useState(search==="" ? 0 : 3);
+  const [userPerPage, setUserPerPage] = useState();
+  const [hide, setHide] = useState(true)
+
+  useEffect(() => {
+    if(search === "") {
+      return setUserPerPage(0);
+    } else {
+        setUserPerPage(3)
+        setHide(false)
+    }
+  })
 
   //* Finding Last User;
   const indexOfLastUser = currentPage * userPerPage;
@@ -27,7 +37,7 @@ const Home = () => {
           <SearchBar />
         </div>
         <div className="app-user-list">
-          <div className="user-lists">
+          <div className="user-lists" hidden={hide}>
             <User
               user={user}
               indexOfFirstUser={indexOfFirstUser}
@@ -57,5 +67,5 @@ export default Home;
 10- "el" diye arama yaptim detay sayfasinda, sonuc yok ama 4 sayfa navigation gosteriyor 14. sayfaya gelip yaptim bu aramayi, ve yukardaki ekran goruntusundeki gibi sonuc dondu Ne olursa olsun elindeki json data uzerinde arama yapmali app, baska bir state e bagli olmamali
 //11- Bu isimleri falan niye 3 nokta ile kestin? tasarimda boyle bir sey yok
 //12- Order by kisminda "name desc" 2. satira dusuyor
-13- Ana sayfada sonuclar sadece arama yapildiginda gosterilmeli, yani basta sadece search bar ve button olacak
+//13- Ana sayfada sonuclar sadece arama yapildiginda gosterilmeli, yani basta sadece search bar ve button olacak
 */
