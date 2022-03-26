@@ -221,6 +221,7 @@ body {
   text-decoration: none;
   color: #484848;
   user-select: none;
+  display: block;
 }
 
 .disabled {

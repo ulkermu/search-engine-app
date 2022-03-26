@@ -62,7 +62,7 @@ export default Home;
 //5- Sayfalar arasi ileri geri navigate ettigimde state kayboluyor, search barda aradigim seyi goremiyorum
 6- Search bar bosken search e basamamam lazim, bak tasarimda error state i koymus eger bossa ve search etmeye calisiyorsa kirmizi olmali input
 //7- Order by kisminda bi problem var anlamadim, ust uste degistir, etkilemiyor listeyi.
-8- Previous next butonlarinin sadece textlerine tiklaniyor, kenarlardaki bosluklara tiklanmiyor
+//8- Previous next butonlarinin sadece textlerine tiklaniyor, kenarlardaki bosluklara tiklanmiyor
 9- Search inputlari onChange inde degil de "search" butonuna basildiginda calismali arama, tasarim ona gore yapilmis
 10- "el" diye arama yaptim detay sayfasinda, sonuc yok ama 4 sayfa navigation gosteriyor 14. sayfaya gelip yaptim bu aramayi, ve yukardaki ekran goruntusundeki gibi sonuc dondu Ne olursa olsun elindeki json data uzerinde arama yapmali app, baska bir state e bagli olmamali
 //11- Bu isimleri falan niye 3 nokta ile kestin? tasarimda boyle bir sey yok
