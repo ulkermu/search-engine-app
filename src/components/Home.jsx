@@ -62,7 +62,7 @@ export default Home;
 3- ana sayfada arama yapip show more dedikten sonra, /showmore a redirect oluyor ama ne aradigimi goremiyorum. yaptigim arama search barda gorunmeli
 //4- Name asc / desc dogru calismiyor First name e gore alfabetik siralamsi lazim
 //5- Sayfalar arasi ileri geri navigate ettigimde state kayboluyor, search barda aradigim seyi goremiyorum
-6- Search bar bosken search e basamamam lazim, bak tasarimda error state i koymus eger bossa ve search etmeye calisiyorsa kirmizi olmali input
+//6- Search bar bosken search e basamamam lazim, bak tasarimda error state i koymus eger bossa ve search etmeye calisiyorsa kirmizi olmali input
 //7- Order by kisminda bi problem var anlamadim, ust uste degistir, etkilemiyor listeyi.
 //8- Previous next butonlarinin sadece textlerine tiklaniyor, kenarlardaki bosluklara tiklanmiyor
 //9- Search inputlari onChange inde degil de "search" butonuna basildiginda calismali arama, tasarim ona gore yapilmis

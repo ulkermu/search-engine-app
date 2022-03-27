@@ -2,12 +2,11 @@ import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
 const MoreSearchBar = () => {
-  const { search, setSearch } = useContext(UserContext);
+  const { setSearch } = useContext(UserContext);
 
   const submitHandler = (e) => {
     e.preventDefault();
     setSearch(e.target['search'].value)
-    console.log('submitted');
   }
 
   const focusHandler = () => {
@@ -18,8 +17,8 @@ const MoreSearchBar = () => {
     console.log('onInput', e.target.value);
   }
 
-  const clickHandler = (e) => {
-    //e.preventDefault();
+  const clickHandler = () => {
+    
   }
 
   return (
@@ -31,6 +30,7 @@ const MoreSearchBar = () => {
         type="text"
         onFocus={focusHandler}
         onInput={(e) => changeHandler(e)}
+        autoComplete="off"
       />
       <button
         onClick={clickHandler}

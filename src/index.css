@@ -54,22 +54,6 @@ body {
   display: flex;
 }
 
-.search-input {
-  width: 709px;
-  height: 36px;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 1);
-  text-align: center;
-}
-
-.search-input:placeholder-shown {
-  text-align: center;
-}
-
-.search-input:hover {
-  background-color: rgba(100, 100, 100, 0.08);
-}
-
 .search-button {
   width: 138px;
   height: 36px;
@@ -313,4 +297,8 @@ input:focus {
 
 .margin{
   margin: 50px;
+}
+
+.error {
+  border: 2px solid red;
 }
