@@ -303,3 +303,14 @@ input:focus {
   background-color: #C4C4C4;
   color: #FFFFFF;
 }
+
+.break {
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  padding-right: 1px;
+}
+
+.margin{
+  margin: 50px;
+}

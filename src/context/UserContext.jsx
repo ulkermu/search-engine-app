@@ -9,7 +9,7 @@ const UserContextProvider = (props) => {
   const [user, setUser] = useState(JSONDATA.data)
 
   const [users, dispatch] = useReducer(() => {
-      const users = localStorage.getItem("data");
+      const users = localStorage.getItem(JSONDATA.data);
       return users ? JSON.parse(users) : [];
     }
   );

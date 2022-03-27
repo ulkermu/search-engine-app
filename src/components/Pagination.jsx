@@ -1,6 +1,6 @@
 import ReactPaginate from "react-paginate";
 
-const Pagination = ({ handleSelect, pageCount }) => {
+const Pagination = ({ handleSelect, pageCount, handlePage }) => {
 
   return (
     <div>
@@ -8,6 +8,7 @@ const Pagination = ({ handleSelect, pageCount }) => {
         previousLabel={"Previous"}
         nextLabel={"Next"}
         breakLabel={'...'}
+        breakClassName={"break"}
         pageCount={pageCount}
         marginPagesDisplayed={3}
         pageRangeDisplayed={3}
@@ -19,7 +20,8 @@ const Pagination = ({ handleSelect, pageCount }) => {
         previousLinkClassName={"page-links"}
         nextClassName={"page-prev"}
         nextLinkClassName={"page-links"}
-        activeClassName={"active"}        
+        activeClassName={"active"}
+        onPageActive={handlePage}
         />
     </div>
   );

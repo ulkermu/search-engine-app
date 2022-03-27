@@ -1,23 +1,47 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 
+const MoreSearchBar = ({ handleSelect }) => {
+  const { search, setSearch } = useContext(UserContext);
 
-const SearchBar = () => {
+  const submitHandler = (e) => {
+    e.preventDefault();
+    setSearch(e.target['search'].value)
+    console.log('submitted');
+  }
 
-  const {setSearch} = useContext(UserContext)
+  const focusHandler = () => {
+    console.log('onFocus');
+  }
 
-    return (
-      <div className="search-bar">
-        <input
-          onChange={e => setSearch(e.target.value)}
-          className="search-input"
-          type="search"
-          placeholder="Search"
-        />
-        <Link to="/showmore"><button className="search-button">Search</button></Link>
-      </div>
-    );
-}
+  const changeHandler = (e) => {
+    console.log('onInput', e.target.value);
+  }
 
-export default SearchBar;
+  const clickHandler = (e) => {
+    //e.preventDefault();
+  }
+
+  return (
+    <form onSubmit={submitHandler} className="search-more-bar">
+      <input
+        className="search-more-input"
+        placeholder="Search"
+        name="search"
+        type="text"
+        onFocus={focusHandler}
+        onInput={(e) => changeHandler(e)}
+      />
+      <button
+        onClick={clickHandler}
+        type="submit"
+        name="searchBtn"
+        className="search-button"
+      >
+        Search
+      </button>
+    </form>
+  );
+};
+
+export default MoreSearchBar;

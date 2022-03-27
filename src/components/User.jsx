@@ -39,7 +39,7 @@ const User = ({ indexOfFirstUser, indexOfLastUser }) => {
               </div>
               <div className="user-mail">{`Email: ${truncateMail(
                 user[2],
-                30
+                15
               )}`}</div>
             </div>
             <div className="line"></div>
