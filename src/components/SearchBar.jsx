@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
-const MoreSearchBar = ({ handleSelect }) => {
+const MoreSearchBar = () => {
   const { search, setSearch } = useContext(UserContext);
 
   const submitHandler = (e) => {

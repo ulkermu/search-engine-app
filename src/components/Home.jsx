@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const { user } = useContext(UserContext);
   const { search } = useContext(UserContext);
+  
   const [hide, setHide] = useState(true)
-
   const [currentPage] = useState(1);
   const [userPerPage, setUserPerPage] = useState();
   
