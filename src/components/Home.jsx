@@ -21,7 +21,7 @@ const Home = () => {
         setUserPerPage(3)
         setHide(false)
     }
-  })
+  },[search])
 
   //* Finding Last User;
   const indexOfLastUser = currentPage * userPerPage;

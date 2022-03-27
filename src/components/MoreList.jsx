@@ -21,9 +21,7 @@ const MoreList = () => {
 
   const pageCount = Math.ceil(
     user.filter((user) => {
-      if (search === "") {
-        return user;
-      } else if (
+      if (
         user[0].toLowerCase().includes(search.toLowerCase()) ||
         user[4].toLowerCase().includes(search.toLowerCase()) ||
         user[3].toLowerCase().includes(search.toLowerCase())
@@ -34,7 +32,7 @@ const MoreList = () => {
     }).length / userPerPage
   );
 
-  const handlePage = (use) => {
+  const handlePage = () => {
     if (search !== "" && pageCount === 1) {
       setCurrentPage(1)
     }
@@ -43,7 +41,6 @@ const MoreList = () => {
   useEffect(() => {
     handlePage();
   })
-  
   
   //* Pagination Number Select
   const handleSelect = (data) => {
