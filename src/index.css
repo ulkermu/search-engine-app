@@ -221,7 +221,7 @@ body {
   align-items: center;
 }
 
-.search-more-input {
+.search-input {
   width: 509px;
   height: 36px;
   border-radius: 8px;
@@ -230,15 +230,15 @@ body {
   margin-left: 35px;
 }
 
-.search-more-input:placeholder-shown {
+.search-input:placeholder-shown {
   text-align: center;
 }
 
-.search-more-input:hover {
+.search-input:hover {
   background: rgba(100, 100, 100, 0.08);
 }
 
-.search-more-input:required {
+.search-input:required {
   border: 2px solid red;
 }
 

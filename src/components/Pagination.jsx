@@ -21,7 +21,6 @@ const Pagination = ({ handleSelect, pageCount, handlePage }) => {
         nextClassName={"page-prev"}
         nextLinkClassName={"page-links"}
         activeClassName={"active"}
-        onPageActive={handlePage}
         />
     </div>
   );

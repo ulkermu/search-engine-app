@@ -24,7 +24,7 @@ const MoreSearchBar = () => {
   return (
     <form onSubmit={submitHandler} className="search-more-bar">
       <input
-        className="search-more-input"
+        className="search-input"
         placeholder="Search"
         name="search"
         type="text"

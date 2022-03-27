@@ -34,8 +34,8 @@ const MoreList = () => {
     }).length / userPerPage
   );
 
-  const handlePage = () => {
-    if (search !== "" && pageCount <= 17) {
+  const handlePage = (use) => {
+    if (search !== "" && pageCount === 1) {
       setCurrentPage(1)
     }
   }
